@@ -1,4 +1,5 @@
-﻿using System;
+﻿//
+using System;
 namespace Common_Task
 {
     internal class Program
