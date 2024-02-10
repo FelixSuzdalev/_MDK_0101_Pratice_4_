@@ -8,18 +8,25 @@ namespace Common_Task
         {
             try
             {
-                long a, b, c;
+                string a, b, c = "";
                 Console.WriteLine("Программа сложения больших чисел (больше 10^9)\nВведите первое большое число:");
-                a = Convert.ToInt64(Console.ReadLine());
+                a = Console.ReadLine();
                 Console.WriteLine("Введите второе большое число:");
-                b = Convert.ToInt64(Console.ReadLine());
-                double p = Math.Pow(10, 9);
-                if (a > p && b > p)
+                b = Console.ReadLine();
+                int maxLength = Math.Max(a.Length, b.Length);
+                int perenos = 0;
+                char[] result = new char[maxLength + 1];
+                for (int i = 0; i < maxLength; i++) 
                 {
-                    c = a + b;
-                    Console.WriteLine("Сумма = {0}", c);
+                    int res1 = i < a.Length ? a[a.Length - 1 - i] - '0' : 0; 
+                    int res2 = i < b.Length ? a[a.Length - 1 - i] - '0' : 0; 
+
+                    int sum = res1 + res2 + perenos; 
+                    perenos = sum / 10; // Определяем новый перенос
+                    result[maxLength - i] = (char)('0' + sum % 10); // Записываем сумму в массив результата
                 }
-                else Console.WriteLine("Числа меньше 10^9");
+                
+                Console.WriteLine("Сумма = {0}", result);
             }
             catch (OverflowException е)
             {
