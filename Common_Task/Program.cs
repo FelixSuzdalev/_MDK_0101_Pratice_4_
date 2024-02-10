@@ -3,7 +3,7 @@ using System;
 namespace Common_Task
 {
     internal class Program
-    {
+    {//gg
         static void Main()
         {
             try
