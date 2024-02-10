@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System; //пвп
 class Program
 {
     static void Main()
